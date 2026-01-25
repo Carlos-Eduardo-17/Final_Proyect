@@ -10,7 +10,7 @@ Recuperación de contraseña
 ❌ No toca carritos, pedidos ni pagos
 */
 
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 
@@ -23,9 +23,10 @@ import {
 
 export const authService = {
   // =========================
-  // REGISTER
+  // REGISTER  
   // =========================
   async register({ firstName, lastName, email, password }) {
+
     const existingUser = await userRepository.findByEmail(email);
     if (existingUser) {
       throw new Error("El email ya está registrado");
@@ -62,7 +63,7 @@ export const authService = {
   },
 
   // =========================
-  // VERIFY EMAIL
+  // VERIFY EMAIL  
   // =========================
   async verifyEmail({ email, code }) {
     const user = await userRepository.findByEmail(email);

@@ -7,7 +7,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { connectDb } from "./config/db.js";
 import { runSeeds } from "./seeds/index.js";
-
+import  authRoutes  from "./routes/auth.routes.js";
 
 const limiter = rateLimit({ windowMs: 60_000, max: 2 });
 
@@ -19,7 +19,7 @@ export class Server {
         this.middlewares();
         this.routes();
         this.seeds();
-        
+
     }
 
     async database() {
@@ -45,16 +45,13 @@ export class Server {
                 secure: process.env.NODE_ENV === "production" // usar cookies seguras en producción
             }
         }));
-        
-        //this.app.use(passport.initialize());
-        //this.app.use(passport.session());
     }
 
     routes() {
-        //this.app.use("/api/auth", authRoutes);        
         this.app.use("/api/health", limiter, (req, res) => {
             res.json({ status: "OK" });
-        });        
+        });
+        this.app.use("/auth", authRoutes)
     }
 
     listen() {

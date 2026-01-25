@@ -21,32 +21,32 @@ import { orderDetailRepository } from "../repositories/orderDetail.repository.js
 export const orderService = {
 
   async createOrderFromCart(userId) {
-    // 1️⃣ Obtener carrito activo
+    // Obtener carrito activo
     const cart = await cartRepository.findActiveByUser(userId);
     if (!cart) {
       throw new Error("El usuario no tiene un carrito activo");
     }
 
-    // 2️⃣ Obtener items del carrito
+    // Obtener items del carrito
     const items = await itemCartRepository.findByCart(cart._id);
     if (!items.length) {
       throw new Error("El carrito está vacío");
     }
 
-    // 3️⃣ Calcular total
+    // Calcular total
     let total = 0;
     for (const item of items) {
       total += item.price * item.quantity; // Evita que cambios futuros en libros afecten pedidos pasados.
     }
 
-    // 4️⃣ Crear pedido
+    // Crear pedido
     const order = await orderRepository.create({
       user: userId,
       status: "PENDING",
       total,
     });
 
-    // 5️⃣ Crear detalles del pedido (snapshot)
+    // Crear detalles del pedido (snapshot)
     for (const item of items) {
       await orderDetailRepository.create({
         order: order._id,
@@ -56,10 +56,10 @@ export const orderService = {
       });
     }
 
-    // 6️⃣ Cerrar carrito
+    // Cerrar carrito
     await cartRepository.markAsConverted(cart._id); // Evita reutilización del mismo carrito.
 
-    // 7️⃣ Limpiar items del carrito
+    // Limpiar items del carrito
     await itemCartRepository.deleteByCart(cart._id);
 
     return order;

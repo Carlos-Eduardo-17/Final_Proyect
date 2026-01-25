@@ -21,7 +21,7 @@ export const userRepository = {
       email: email.toLowerCase(),
       deletedAt: null,
     })
-      .select("+passwordHash") // Respeta esto del schema: select: false. El password solo entra cuando tú lo pides
+      .select("+passwordHash") // Respeta esto del schema: select: false. El password solo entra cuando uno lo pide explícitamente
       .populate("role"); // Simplifica services. Evita repetir queries. Más legible
   },
 

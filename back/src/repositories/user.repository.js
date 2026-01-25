@@ -40,4 +40,49 @@ export const userRepository = {
       { new: true }
     );
   },
+
+  verifyEmail(userId) {
+    return User.findByIdAndUpdate(
+      userId,
+      {
+        status: "ACTIVE",
+        emailVerified: true,
+        verificationCode: null,
+        verificationCodeExpiresAt: null,
+      },
+      { new: true }
+    );
+  },
+
+  setResetPasswordToken(userId, token, expiresAt) {
+    return User.findByIdAndUpdate(
+      userId,
+      {
+        resetPasswordToken: token,
+        resetPasswordExpiresAt: expiresAt,
+      },
+      { new: true }
+    );
+  },
+
+  findByResetToken(token) {
+    return User.findOne({
+      resetPasswordToken: token,
+      deletedAt: null,
+    });
+  },
+
+  updatePassword(userId, passwordHash) {
+    return User.findByIdAndUpdate(
+      userId,
+      {
+        passwordHash,
+        resetPasswordToken: null,
+        resetPasswordExpiresAt: null,
+        lastPasswordChangeAt: new Date(),
+      },
+      { new: true }
+    );
+  },
+
 };

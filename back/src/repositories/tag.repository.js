@@ -41,4 +41,12 @@ export const tagRepository = {
       { new: true }
     );
   },
+
+  findByIds(ids) {
+    return Tag.find({
+      _id: { $in: ids },
+      deletedAt: null,
+    });
+  },
+
 };

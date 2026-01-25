@@ -7,7 +7,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { connectDb } from "./config/db.js";
 import { runSeeds } from "./seeds/index.js";
-import { OrderROute } from "./routes/order.routes.js";
+
 
 const limiter = rateLimit({ windowMs: 60_000, max: 2 });
 

@@ -18,13 +18,13 @@ export const bookService = {
   async create(data) {
     const { author, tags } = data;
 
-    // 1️⃣ Validar autor
+    // Validar autor
     const authorExists = await authorRepository.findById(author);
     if (!authorExists) {
       throw new Error("Autor no encontrado");
     }
 
-    // 2️⃣ Validar tags (si vienen)
+    // Validar tags (si vienen)
     if (tags && tags.length > 0) {
       const existingTags = await tagRepository.findByIds(tags);
       if (existingTags.length !== tags.length) {
@@ -32,7 +32,7 @@ export const bookService = {
       }
     }
 
-    // 3️⃣ Crear libro
+    // Crear libro
     return bookRepository.create(data);
   },
 
@@ -40,7 +40,7 @@ export const bookService = {
   // Obtener libros públicos
   // =========================
   async getPublicBooks() {
-    return bookRepository.findActive();
+    return bookRepository.findAll();
   },
 
   // =========================

@@ -60,7 +60,7 @@ export const tagService = {
       throw new Error("Tag no encontrado");
     }
 
-    return tagRepository.updateById(id, { name: name.trim() });
+    return tagRepository.update(id, { name: name.trim() });
   },
 
   // =========================

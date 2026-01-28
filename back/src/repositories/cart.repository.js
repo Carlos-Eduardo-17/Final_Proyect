@@ -8,6 +8,7 @@ export const cartRepository = {
 
   // Obtener carrito activo del usuario
   findActiveByUser(userId) {
+    
     return Cart.findOne({
       user: userId,
       status: "ACTIVE",
@@ -17,6 +18,11 @@ export const cartRepository = {
   // Buscar carrito por ID
   findById(id) {
     return Cart.findById(id);
+  },
+
+  findByIdUser(userId){
+     return Cart.findOne({
+      user: userId});
   },
 
   // Marcar carrito como convertido en pedido
@@ -36,4 +42,21 @@ export const cartRepository = {
       { new: true }
     );
   },
+
+  //PARCHE //TODO
+  getOrCreateByUser(userId) {
+    return Cart.findOneAndUpdate(
+      { user: userId, isConverted: false },
+      { $setOnInsert: { user: userId } },
+      { new: true, upsert: true }
+    ).populate("items.book");
+  },
+  findByUser(userId) {
+    return Cart.findOne({ user: userId, isConverted: false })
+      .populate("items.book");
+  },
+  save(cart) {
+    return cart.save();
+  }
+
 };

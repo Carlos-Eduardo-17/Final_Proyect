@@ -30,7 +30,7 @@ export async function seedAdmin() {
 
   console.log("✅ Usuario ADMIN creado");
 
-  const userRole = await Role.findOne({ name: "USER" });
+  /*const userRole = await Role.findOne({ name: "USER" });
   await User.create({
     firstName: "Carlos",
     lastName: "Medina",
@@ -41,5 +41,5 @@ export async function seedAdmin() {
     emailVerified: true,
   });
 
-  console.log("✅ Usuario USER creado");
+  console.log("✅ Usuario USER creado");*/
 }

@@ -19,9 +19,11 @@ import { bookRepository } from "../repositories/book.repository.js";
 export const cartService = {
 
   async getOrCreateCart(userId) {
+
     let cart = await cartRepository.findActiveByUser(userId);
 
     if (!cart) {
+
       cart = await cartRepository.create({
         user: userId,
         status: "ACTIVE",
@@ -30,6 +32,16 @@ export const cartService = {
 
     return cart;
   },
+
+
+  
+  async getActualCart(userId) {
+
+    return await cartRepository.findByIdUser(userId);   
+
+    
+  },
+
 
   async addItem(userId, bookId, quantity = 1) {
     if (quantity <= 0) {
@@ -73,10 +85,20 @@ export const cartService = {
     };
   },
 
-  async clearCart(userId) {
+
+
+  async removeItem(userId, itemId) {
     const cart = await cartRepository.findActiveByUser(userId);
     if (!cart) return;
 
-    await itemCartRepository.deleteByCart(cart._id);
+
+    await itemCartRepository.deleteById(itemId);
+  },
+
+  async clear(userId, cartId) {
+    const cart = await cartRepository.findActiveByUser(userId);
+    if (!cart) return;
+
+    await itemCartRepository.deleteByCart(cartId);
   },
 };

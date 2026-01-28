@@ -15,17 +15,23 @@ export const couponService = {
   // Crear cupón
   // =========================
   async create(data) {
-    const { code, discountPercent, expiresAt, maxUses } = data;
+    const {
+      code,
+      discountType,
+      discountValue,
+      maxUses,
+      expiresAt
+    } = data;
 
-    if (!code || !discountPercent) {
-      throw new Error("Código y descuento son obligatorios");
+    if (!code || !discountType || !discountValue || !maxUses || !expiresAt) {
+      throw new Error("Datos del cupón incompletos");
     }
 
-    if (discountPercent <= 0 || discountPercent > 100) {
-      throw new Error("El descuento debe estar entre 1 y 100");
+    if (discountValue <= 0) {
+      throw new Error("El valor de descuento debe ser mayor a 0");
     }
 
-    const exists = await couponRepository.findByCode(code);
+    const exists = await couponRepository.findByCode(code.toUpperCase());
     if (exists) {
       throw new Error("El cupón ya existe");
     }
@@ -37,24 +43,41 @@ export const couponService = {
   },
 
   // =========================
-  // Obtener cupón válido
+  // Validar cupón
   // =========================
   async getValidCoupon(code) {
-    const coupon = await couponRepository.findByCode(code);
+    const coupon = await couponRepository.findByCode(code.toUpperCase());
 
-    if (!coupon) {
+    if (!coupon || !coupon.isActive || coupon.deletedAt) {
       throw new Error("Cupón inválido");
     }
 
-    if (coupon.expiresAt && coupon.expiresAt < new Date()) {
+    if (coupon.expiresAt < new Date()) {
       throw new Error("El cupón ha expirado");
     }
 
-    if (coupon.maxUses && coupon.usedCount >= coupon.maxUses) {
+    if (coupon.usedCount >= coupon.maxUses) {
       throw new Error("El cupón alcanzó su límite de usos");
     }
 
     return coupon;
+  },
+
+  // =========================
+  // Aplicar descuento
+  // =========================
+  applyDiscount(coupon, subtotal) {
+    let discount = 0;
+
+    if (coupon.discountType === "PERCENTAGE") {
+      discount = subtotal * (coupon.discountValue / 100);
+    }
+
+    if (coupon.discountType === "FIXED") {
+      discount = coupon.discountValue;
+    }
+
+    return Math.min(discount, subtotal);
   },
 
   // =========================
@@ -64,22 +87,16 @@ export const couponService = {
     return couponRepository.incrementUsage(id);
   },
 
-  // =========================
-  // Obtener todos
-  // =========================
   async findAll() {
     return couponRepository.findAll();
   },
 
-  // =========================
-  // Soft delete
-  // =========================
   async remove(id) {
     const coupon = await couponRepository.findById(id);
     if (!coupon) {
       throw new Error("Cupón no encontrado");
     }
 
-    return couponRepository.softDeleteById(id);
+    return couponRepository.softDelete(id);
   },
 };

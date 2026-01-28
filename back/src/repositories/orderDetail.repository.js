@@ -10,19 +10,18 @@ Relación directa con Order
 import { OrderDetail } from "../schemas/orderDetail.schema.js";
 
 export const orderDetailRepository = {
-  // Crear un detalle de pedido
+  // Crear un detalle de orden
   create(data) {
     return OrderDetail.create(data);
   },
 
-  // Crear múltiples detalles (bulk insert)
+  // Crear múltiples detalles (cuando conviertes el carrito)
   createMany(details) {
     return OrderDetail.insertMany(details);
   },
 
-  // Obtener detalles por pedido
-  findByOrder(orderId) {
-    return OrderDetail.find({ order: orderId })
-      .populate("book", "title imageString");
+  // Obtener detalles por orden
+  findByOrder(orderId) {    
+    return OrderDetail.find({ order: orderId }).populate("book");
   },
 };

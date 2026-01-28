@@ -8,6 +8,11 @@ const cartSchema = new mongoose.Schema(
       required: true,
       unique: true, // un carrito activo por usuario
     },
+    status: {
+      type: String,
+      enum: ["ACTIVE", "CONVERTED"],
+      default: "ACTIVE",
+    },
   },
   {
     timestamps: { createdAt: true, updatedAt: false },

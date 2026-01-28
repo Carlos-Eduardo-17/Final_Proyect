@@ -22,7 +22,7 @@ export const orderRepository = {
   findById(id) {
     return Order.findById(id)
       .populate("user", "firstName lastName email")
-      .populate("coupon", "code discountType discountValue");
+      //TODO .populate("coupon", "code discountType discountValue");
   },
 
   // Listar pedidos por usuario
@@ -45,4 +45,14 @@ export const orderRepository = {
       { new: true }
     );
   },
+
+  //PARCHE
+  updateById(id, data) {
+    return Order.findByIdAndUpdate(
+      id,
+      data,
+      { new: true } // devuelve el documento actualizado
+    );
+  },
+
 };

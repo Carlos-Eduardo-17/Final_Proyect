@@ -7,7 +7,16 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { connectDb } from "./config/db.js";
 import { runSeeds } from "./seeds/index.js";
-import  authRoutes  from "./routes/auth.routes.js";
+import paymentRoutes from "./routes/payment.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+import tagRoutes from "./routes/tag.routes.js";
+import authorRoutes from "./routes/author.routes.js";
+import bookRoutes from "./routes/book.routes.js";
+import orderRoutes from "./routes/order.routes.js";
+import cartRoutes from "./routes/cart.routes.js";
+import orderDetailRoutes from "./routes/orderDetail.routes.js";
+import couponRoutes from "./routes/coupon.routes.js";
+
 
 const limiter = rateLimit({ windowMs: 60_000, max: 2 });
 
@@ -34,7 +43,7 @@ export class Server {
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(helmet());
-        this.app.use(cookieParser());
+        this.app.use(cookieParser()); // Usado para JWT
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.static('public')); // sirve archivos estáticos desde la carpeta public sin necesidad de definir rutas manuales (pe: /public/logo.png  →  https://tuservidor.com/logo.png) // Carga index.html automáticamente
         this.app.use(session({
@@ -52,6 +61,17 @@ export class Server {
             res.json({ status: "OK" });
         });
         this.app.use("/auth", authRoutes)
+        //this.app.use("/auth", authRoutes);
+        this.app.use("/tags", tagRoutes);
+        this.app.use("/authors", authorRoutes);
+        this.app.use("/books", bookRoutes);
+
+        this.app.use("/cart", cartRoutes);
+        
+        this.app.use("/orders", orderRoutes);
+        this.app.use("/orderDetails", orderDetailRoutes);
+        this.app.use("/coupons", couponRoutes);
+        this.app.use("/payments", paymentRoutes);
     }
 
     listen() {

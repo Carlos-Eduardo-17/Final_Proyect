@@ -104,14 +104,7 @@ export const authService = {
       { expiresIn: "7d" }
     );
 
-    return {
-      token,
-      user: {
-        id: user._id,
-        email: user.email,
-        role: user.role,
-      },
-    };
+    return user;
   },
 
   // =========================

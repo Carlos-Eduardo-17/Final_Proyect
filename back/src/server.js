@@ -7,7 +7,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 
 import { connectDb } from "./config/db.js";
-import { runSeeds } from "./seeds/index.js";
+//import { runSeeds } from "./seeds/index.js";
 
 import paymentRoutes from "./routes/payment.routes.js";
 import authRoutes from "./routes/auth.routes.js";
@@ -29,16 +29,16 @@ export class Server {
         this.database();
         this.middlewares();
         this.routes();
-        this.seeds();
+        //this.seeds();
     }
 
     async database() {
         await connectDb();
     }
 
-    async seeds() {
+    /*async seeds() {
         await runSeeds();
-    }
+    }*/
 
     middlewares() {
         this.app.use(cors());

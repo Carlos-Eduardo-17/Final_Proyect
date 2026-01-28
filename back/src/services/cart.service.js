@@ -62,6 +62,9 @@ export const cartService = {
 
     if (existingItem) {
       existingItem.quantity += quantity;
+      if(existingItem.quantity > 5){
+        throw new Error("La cantidad maxima por libro es de 5");
+      }
       return existingItem.save();
     }
 

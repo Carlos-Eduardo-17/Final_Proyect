@@ -1,5 +1,6 @@
 import { stripe } from "../config/stripe.js";
 import { orderRepository } from "../repositories/order.repository.js";
+import { orderDetailService } from "../services/orderDetail.service.js";
 
 export const paymentService = {
   async createPaymentIntent(orderId, userId) {
@@ -8,7 +9,7 @@ export const paymentService = {
     if (!order) {
       throw new Error("Pedido no encontrado");
     }
-    
+
     if (order.user._id.toString() !== userId.toString()) {
       throw new Error("No autorizado");
     }
@@ -25,9 +26,6 @@ export const paymentService = {
         userId,
       },
     });
-
-    
-    //TODO registrar intento de pago
 
     return paymentIntent;
   },
@@ -48,7 +46,17 @@ export const paymentService = {
       },
     });
 
-    //TODO registrar pago
+    let orderDetail = await orderDetailService.getByOrder(orderId);
+
+    console.log("Arreglo de orderDetail", orderDetail);
+
+    orderDetail.forEach(async (element) => {
+      console.log("Stock disponible: ", element.book.stock, " Cantidad: ", element.quantity)
+      element.book.stock = element.book.stock - element.quantity;
+    }); // TODO
+
+
+    // Descontar stock de productos de order
 
     return order;
   },

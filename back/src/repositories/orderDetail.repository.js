@@ -24,4 +24,5 @@ export const orderDetailRepository = {
   findByOrder(orderId) {    
     return OrderDetail.find({ order: orderId }).populate("book");
   },
+
 };

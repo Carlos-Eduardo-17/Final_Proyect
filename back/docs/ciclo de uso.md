@@ -79,6 +79,7 @@
     
     - El carrito se creará automáticamente al agregar items en él.
     - El carrito estará ACTIVO
+    - En el frontend deberá haber un campo de conteo hasta máximo 5 unidades por producto.
 
     Retorna
 
@@ -156,6 +157,7 @@
         }
 
     - Stripe requiere frontend para confirmación real. En este proyecto backend se simula la confirmación y se valida el flujo completo.
+    - Se descuentan del stock los libros comprados.
 
     Retorna
 

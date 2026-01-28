@@ -180,6 +180,15 @@
             }
         }
 
+9. Cerrar sesión
+
+    POST http://localhost:3000/auth/logout
+
+    Retorna
+
+        {
+            "message": "Logout exitoso"
+        }
 
 ## CASOS DE USO
 

@@ -6,6 +6,7 @@ import {
   updateTag,
   deleteTag,
 } from "../controllers/tag.controller.js";
+import { roleMiddleware } from "../middlewares/role.middleware.js";
 
 const router = Router();
 
@@ -14,7 +15,7 @@ const router = Router();
 // =========================
 
 // Crear tag
-router.post("/", createTag);
+router.post("/", roleMiddleware, createTag);
 
 // Listar tags activos
 router.get("/", getTags);
@@ -23,9 +24,9 @@ router.get("/", getTags);
 router.get("/:id", getTagById);
 
 // Actualizar tag
-router.put("/:id", updateTag);
+router.put("/:id", roleMiddleware, updateTag);
 
 // Soft delete
-router.delete("/:id", deleteTag);
+router.delete("/:id", roleMiddleware, deleteTag);
 
 export default router;

@@ -18,24 +18,24 @@ export const reviewService = {
   // Crear reseña
   // =========================
   async create({ userId, bookId, rating, comment }) {
-    // 1️⃣ Validar usuario
+    // Validar usuario
     const user = await userRepository.findById(userId);
     if (!user) {
       throw new Error("Usuario no válido");
     }
 
-    // 2️⃣ Validar libro
+    // Validar libro
     const book = await bookRepository.findById(bookId);
     if (!book) {
       throw new Error("Libro no encontrado");
     }
 
-    // 3️⃣ Validar rating
+    // Validar rating
     if (!rating || rating < 1 || rating > 5) {
       throw new Error("El rating debe estar entre 1 y 5");
     }
 
-    // 4️⃣ Evitar reseña duplicada
+    // Evitar reseña duplicada
     const existing = await reviewRepository.findByUserAndBook(
       userId,
       bookId
@@ -44,7 +44,7 @@ export const reviewService = {
       throw new Error("Ya reseñaste este libro");
     }
 
-    // 5️⃣ Crear reseña
+    // Crear reseña
     return reviewRepository.create({
       user: userId,
       book: bookId,

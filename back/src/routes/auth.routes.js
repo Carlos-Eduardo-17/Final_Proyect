@@ -15,7 +15,7 @@ router.post("/forgot-password", authController.forgotPassword);
 router.post("/reset-password", authController.resetPassword);
 router.get("/me", authMiddleware,(req,res) =>{res.json(req.user)});
 router.post("/logout", (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token");  
   res.json({ message: "Logout exitoso" });
 });
 

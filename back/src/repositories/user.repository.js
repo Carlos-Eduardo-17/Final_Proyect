@@ -5,7 +5,7 @@ export const userRepository = {
     return User.find({ deletedAt: null }).populate("role");
   },
 
-  findById(id) {
+  findById(id) {    
     return User.findOne({ _id: id, deletedAt: null }).populate("role");
   },
 

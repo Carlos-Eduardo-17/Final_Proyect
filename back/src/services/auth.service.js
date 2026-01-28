@@ -92,7 +92,8 @@ export const authService = {
       throw new Error("La cuenta no está activa");
     }
 
-    const isValid = await bcrypt.compare(password, user.passwordHash);
+    const isValid = await bcrypt.compare(password, user.passwordHash);   
+
     if (!isValid) throw new Error("Credenciales inválidas");
 
     const token = jwt.sign(

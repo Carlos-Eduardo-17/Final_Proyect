@@ -6,6 +6,7 @@ import {
   updateBook,
   deleteBook,
 } from "../controllers/book.controller.js";
+import { roleMiddleware } from "../middlewares/role.middleware.js";
 
 const router = Router();
 
@@ -14,7 +15,7 @@ const router = Router();
 // =========================
 
 // Crear libro
-router.post("/", createBook);
+router.post("/", roleMiddleware,createBook);
 
 // Listar libros públicos
 router.get("/", getPublicBooks);
@@ -26,6 +27,6 @@ router.get("/:id", getBookById);
 router.put("/:id", updateBook);
 
 // Soft delete
-router.delete("/:id", deleteBook);
+router.delete("/:id", roleMiddleware, deleteBook);
 
 export default router;

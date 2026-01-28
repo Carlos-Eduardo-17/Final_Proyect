@@ -12,7 +12,7 @@
 
 2. Registrarse en el sistema:
 
-    POST http://localhost:3000/auth/register
+    POST https://final-proyect-z2yi.onrender.com/auth/register
     
         {        
             "firstName":"Luciana",
@@ -30,7 +30,7 @@
 
 3. Verificar Correo:
 
-    POST http://localhost:3000/auth/verify-email
+    POST https://final-proyect-z2yi.onrender.com/auth/verify-email
 
         {    
             "email":"gaviluz794@gmail.com",
@@ -47,7 +47,7 @@
 
 4. Login:
 
-    POST http://localhost:3000/auth/login
+    POST https://final-proyect-z2yi.onrender.com/auth/login
 
         {    
             "email":"gaviluz794@gmail.com",
@@ -70,7 +70,7 @@
 
 5. Agregar un item al carrito:
 
-    POST http://localhost:3000/cart/items
+    POST https://final-proyect-z2yi.onrender.com/cart/items
 
         {
             "bookId":"69794e920bf1ef02ca9fbc29",
@@ -94,7 +94,7 @@
 
 6. Crear una orden de compra:
 
-    POST http://localhost:3000/orders/
+    POST https://final-proyect-z2yi.onrender.com/orders/
 
         {
             "couponCode":"50OFF"
@@ -133,7 +133,7 @@
 
 7. Intentar pagar la orden de compra:
 
-    POST http://localhost:3000/payments/intent
+    POST https://final-proyect-z2yi.onrender.com/payments/intent
 
         {
         "orderId": "6979513f0bf1ef02ca9fbc4c"
@@ -149,7 +149,7 @@
 
 8. Simular pago (sin frontend):
 
-    POST http://localhost:3000/payments/confirm
+    POST https://final-proyect-z2yi.onrender.com/payments/confirm
 
         {
         "orderId": "6979513f0bf1ef02ca9fbc4c",
@@ -184,7 +184,7 @@
 
 9. Cerrar sesión
 
-    POST http://localhost:3000/auth/logout
+    POST https://final-proyect-z2yi.onrender.com/auth/logout
 
     Retorna
 
@@ -198,7 +198,7 @@
 
 1. Solicitar código de verificación al correo:
 
-    POST http://localhost:3000/auth/forgot-password
+    POST https://final-proyect-z2yi.onrender.com/auth/forgot-password
 
         {    
             "email":"cindy.89a@gmail.com"   
@@ -208,7 +208,7 @@
 
 2. Establecer nueva contraseña:
 
-    POST http://localhost:3000/auth/reset-password
+    POST https://final-proyect-z2yi.onrender.com/auth/reset-password
 
         {    
             "token":"65e676038c194396698e86aeacc58b1e23fc536ec0325b3275ddddc4928acfe5",
@@ -221,7 +221,7 @@
 
 1. Crear tags:
 
-    POST http://localhost:3000/tags/
+    POST https://final-proyect-z2yi.onrender.com/tags/
 
         {
             "name": "Terror"
@@ -240,7 +240,7 @@
 
 2. Crear autores:
 
-    POST http://localhost:3000/authors/
+    POST https://final-proyect-z2yi.onrender.com/authors/
 
         {
             "firstName": "Bram",
@@ -263,7 +263,7 @@
 
 3. Crear libros:
 
-    POST http://localhost:3000/books/
+    POST https://final-proyect-z2yi.onrender.com/books/
 
         {
             "title": "Drácula",
@@ -301,7 +301,7 @@
 
 4. Crear cupón:
 
-    POST http://localhost:3000/coupons
+    POST https://final-proyect-z2yi.onrender.com/coupons
 
         {    
             "code":"50OFF",

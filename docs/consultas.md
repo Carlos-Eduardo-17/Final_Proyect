@@ -1,6 +1,6 @@
 1. Obtener datos de la sesión actual:
     
-    GET http://localhost:3000/auth/me
+    GET https://final-proyect-z2yi.onrender.com/auth/me
 
     Retorna
 
@@ -27,7 +27,7 @@
 
 2. Obtener Tags:
 
-    GET http://localhost:3000/tags/
+    GET https://final-proyect-z2yi.onrender.com/tags/
 
     Retorna
 
@@ -44,7 +44,7 @@
 
 3. Obtener detalles de un Tag:
 
-    GET http://localhost:3000/tags/69794e670bf1ef02ca9fbc22
+    GET https://final-proyect-z2yi.onrender.com/tags/69794e670bf1ef02ca9fbc22
 
     Retorna
 
@@ -59,7 +59,7 @@
 
 4. Obtener Autores:
 
-    GET http://localhost:3000/authors/
+    GET https://final-proyect-z2yi.onrender.com/authors/
 
     Retorna
 
@@ -78,7 +78,7 @@
 
 5.  Obtener detalles de un Autor:
 
-    GET http://localhost:3000/authors/69794e6c0bf1ef02ca9fbc25
+    GET https://final-proyect-z2yi.onrender.com/authors/69794e6c0bf1ef02ca9fbc25
 
     Retorna
 
@@ -95,7 +95,7 @@
 
 6. Obtener libros:
 
-    GET http://localhost:3000/books/
+    GET https://final-proyect-z2yi.onrender.com/books/
 
     Retorna
 
@@ -174,7 +174,7 @@
 
 7. Obtener detalles de un libro:
 
-    GET http://localhost:3000/books/697950b30bf1ef02ca9fbc3b
+    GET https://final-proyect-z2yi.onrender.com/books/697950b30bf1ef02ca9fbc3b
 
     Retorna
 
@@ -216,7 +216,7 @@
 
 8. Obtener Órden de compra:
 
-    GET http://localhost:3000/orders/
+    GET https://final-proyect-z2yi.onrender.com/orders/
 
     Retorna
 
@@ -237,7 +237,7 @@
 
 9. Obtener detalle de la Órden de compra:
 
-    GET http://localhost:3000/orders/6979513f0bf1ef02ca9fbc4c
+    GET https://final-proyect-z2yi.onrender.com/orders/6979513f0bf1ef02ca9fbc4c
 
     Retorna
 
@@ -261,7 +261,7 @@
 
 10. Obtener lista de productos de la Órden de compra
 
-    GET http://localhost:3000/orderDetails/6979513f0bf1ef02ca9fbc4c
+    GET https://final-proyect-z2yi.onrender.com/orderDetails/6979513f0bf1ef02ca9fbc4c
 
     Retorna
 
@@ -329,7 +329,7 @@
 
 11. Obtener detalles de un Cupón:
 
-    GET http://localhost:3000/coupons/50OFF
+    GET https://final-proyect-z2yi.onrender.com/coupons/50OFF
 
     Retorna
 
@@ -350,7 +350,7 @@
 
 12. Obtener detalle de carrito:
 
-    GET http://localhost:3000/cart/
+    GET https://final-proyect-z2yi.onrender.com/cart/
 
     Retorna
 

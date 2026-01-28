@@ -1,6 +1,6 @@
 1. Eliminar Tag:
 
-    DELETE http://localhost:3000/tags/697a2f04b2e6b10a90366634
+    DELETE https://final-proyect-z2yi.onrender.com/tags/697a2f04b2e6b10a90366634
 
     Retorna
 
@@ -15,7 +15,7 @@
 
 2. Eliminar Autor:
 
-    DELETE http://localhost:3000/authors/697a2fa2b2e6b10a90366639
+    DELETE https://final-proyect-z2yi.onrender.com/authors/697a2fa2b2e6b10a90366639
 
     Retorna
 
@@ -32,7 +32,7 @@
 
 3. Eliminar Libro:
 
-    DELETE http://localhost:3000/books/697a2fe1b2e6b10a9036663f
+    DELETE https://final-proyect-z2yi.onrender.com/books/697a2fe1b2e6b10a9036663f
 
     Retorna
 
@@ -58,7 +58,7 @@
 
 4. Eliminar Cupón:
 
-    DELETE http://localhost:3000/coupons/697a302eb2e6b10a90366646
+    DELETE https://final-proyect-z2yi.onrender.com/coupons/697a302eb2e6b10a90366646
 
     Retorna
 

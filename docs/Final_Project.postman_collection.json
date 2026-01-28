@@ -1,0 +1,973 @@
+{
+  "info": {
+    "_postman_id": "8195b572-69ba-4fd6-a8fa-d367e6d18648",
+    "name": "Final_Project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50063127",
+    "_collection_link": "https://go.postman.co/collection/50063127-8195b572-69ba-4fd6-a8fa-d367e6d18648?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/register",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\":\"Luciana\",\r\n    \"lastName\":\"Sanchez\",\r\n    \"email\":\"gaviluz794@gmail.com\",\r\n    \"password\": \"123456789\"    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/register",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/verify-email",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{    \r\n    \"email\":\"gaviluz794@gmail.com\",\r\n    \"code\": \"155005\"    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/verify-email",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "verify-email"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{    \r\n    \"email\":\"carlos.1710.ml@gmail.com\",\r\n    \"password\": \"admin123\"    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/login",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/forgot-password",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{    \r\n    \"email\":\"gaviluz794@gmail.com\"   \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/forgot-password",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "forgot-password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/reset-password",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{    \r\n    \"token\":\"65e676038c194396698e86aeacc58b1e23fc536ec0325b3275ddddc4928acfe5\",\r\n    \"newPassword\": \"perrosogatos123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/reset-password",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "reset-password"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/me",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/me",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/tags/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Historico\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/tags/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "tags",
+            ""
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/tags/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/tags/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "tags",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/tags/6976ce479fe612e556bd5506",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/tags/69794e670bf1ef02ca9fbc22",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "tags",
+            "69794e670bf1ef02ca9fbc22"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/tags/6976ce479fe612e556bd5506",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Drama\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/tags/69794e670bf1ef02ca9fbc22",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "tags",
+            "69794e670bf1ef02ca9fbc22"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/tags/6976ce479fe612e556bd5506",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/tags/697a2f04b2e6b10a90366634",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "tags",
+            "697a2f04b2e6b10a90366634"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/authors/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"César\",\r\n    \"lastName\": \"Vallejo\",\r\n    \"nationality\": \"Peruvian\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/authors/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "authors",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/authors/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/authors/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "authors",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/authors/6976d052c52dcc606382b649",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/authors/69794e6c0bf1ef02ca9fbc25",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "authors",
+            "69794e6c0bf1ef02ca9fbc25"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/authors/6976d052c52dcc606382b649",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Abraham\",\r\n    \"lastName\": \"Diaz\",\r\n    \"nationality\": \"British\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/authors/69794e6c0bf1ef02ca9fbc25",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "authors",
+            "69794e6c0bf1ef02ca9fbc25"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/authors/6976d052c52dcc606382b649",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/authors/697a2fa2b2e6b10a90366639",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "authors",
+            "697a2fa2b2e6b10a90366639"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/books/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"El Huésped de Drácula\",\r\n    \"author\": \"697a5d1407b60abad5147a50\",\r\n    \"editorial\": \"Plutón Ediciones\",\r\n    \"quantityPages\": 320,\r\n    \"measures\": \"15 x 23 cms\",\r\n    \"price\": 7.99,\r\n    \"stock\": 12,\r\n    \"tags\": [\"697a5d1007b60abad5147a4b\"],\r\n    \"imageString\": \"https://images.cdn1.buscalibre.com/fit-in/360x360/58/a1/58a132378641ae42507fa2f214aac995.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/books/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "books",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/books/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/books/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "books",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/books/6976d253c52dcc606382b65a",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/books/697950b30bf1ef02ca9fbc3b",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "books",
+            "697950b30bf1ef02ca9fbc3b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/books/6976d253c52dcc606382b65a",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"El Conde Dracula\",\r\n    \"author\": \"69794e6c0bf1ef02ca9fbc25\",\r\n    \"editorial\": \"Plutón Ediciones\",\r\n    \"quantityPages\": 400,\r\n    \"measures\": \"13 x 20 cm\",\r\n    \"price\": 13.99,\r\n    \"stock\": 12,\r\n    \"tags\": [\"69794e670bf1ef02ca9fbc22\"],\r\n    \"imageString\": \"https://upload.wikimedia.org/wikipedia/commons/4/45/Dracula_1st_ed_cover_reproduction.jpg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/books/69794e920bf1ef02ca9fbc29",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "books",
+            "69794e920bf1ef02ca9fbc29"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/books/6976d253c52dcc606382b65a",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/books/697a2fe1b2e6b10a9036663f",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "books",
+            "697a2fe1b2e6b10a9036663f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/cart/items",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"bookId\":\"697a5d3607b60abad5147a56\",\r\n    \"quantity\": 4\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/cart/items",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "cart",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/cart/",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/cart/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "cart",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/cart/items/6976d6cef2fbc80778d43619",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/cart/items/6976d6cef2fbc80778d43619",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "cart",
+            "items",
+            "6976d6cef2fbc80778d43619"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/cart/6976e0bd4de542fbb89911bf",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/cart/6976e0bd4de542fbb89911bf",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "cart",
+            "6976e0bd4de542fbb89911bf"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/orders/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"couponCode\":\"50OFF\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/orders/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "orders",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/orders/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/orders/",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "orders",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/orders/69780e079fa8ec8cfe7ea759",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/orders/6979513f0bf1ef02ca9fbc4c",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "orders",
+            "6979513f0bf1ef02ca9fbc4c"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/orderDetails/69780e079fa8ec8cfe7ea759",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/orderDetails/6979513f0bf1ef02ca9fbc4c",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "orderDetails",
+            "6979513f0bf1ef02ca9fbc4c"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/coupons",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{    \r\n    \"code\":\"20OFF\",\r\n    \"discountType\":\"PERCENTAGE\",\r\n    \"discountValue\":\"20\",\r\n    \"maxUses\":\"3\",\r\n    \"expiresAt\":\"2026-05-20T15:30:00.000Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/coupons",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "coupons"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/coupons/69782b200495be652520b634",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/coupons/697a302eb2e6b10a90366646",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "coupons",
+            "697a302eb2e6b10a90366646"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/coupons/30OFF",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/coupons/50OFF",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "coupons",
+            "50OFF"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/payments/intent",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"orderId\": \"697842945bb526355518968d\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/payments/intent",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "payments",
+            "intent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/payments/confirm",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"orderId\": \"6979513f0bf1ef02ca9fbc4c\",\r\n  \"paymentIntentId\": \"pi_3SuMCt0NOlpjpcga1OO5RYLg\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/payments/confirm",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "payments",
+            "confirm"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/auth/logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/auth/logout",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "auth",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://final-proyect-z2yi.onrender.com/api/health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://final-proyect-z2yi.onrender.com/api/health",
+          "protocol": "https",
+          "host": [
+            "final-proyect-z2yi",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

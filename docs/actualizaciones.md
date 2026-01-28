@@ -1,6 +1,6 @@
 1. Actualizar tag:
 
-    PUT http://localhost:3000/tags/69794e670bf1ef02ca9fbc22
+    PUT https://final-proyect-z2yi.onrender.com/tags/69794e670bf1ef02ca9fbc22
 
         {
             "name": "Drama"
@@ -19,7 +19,7 @@
 
 2. Actualizar Autor:
 
-    PUT http://localhost:3000/authors/69794e6c0bf1ef02ca9fbc25
+    PUT https://final-proyect-z2yi.onrender.com/authors/69794e6c0bf1ef02ca9fbc25
 
         {
             "firstName": "Abraham",
@@ -42,7 +42,7 @@
 
 3. Actualizar libro:
 
-    PUT http://localhost:3000/books/69794e920bf1ef02ca9fbc29
+    PUT https://final-proyect-z2yi.onrender.com/books/69794e920bf1ef02ca9fbc29
 
         {
             "title": "El Conde Dracula",

@@ -1,9 +1,5 @@
 import { orderDetailService } from "../services/orderDetail.service.js";
 
-// =========================
-// Obtener detalles por orderId
-// GET /orders/:id/details
-// =========================
 export async function getOrderDetails(req, res, next) {
     
   try {

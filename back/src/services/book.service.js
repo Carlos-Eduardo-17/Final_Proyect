@@ -12,9 +12,6 @@ import { authorRepository } from "../repositories/author.repository.js";
 import { tagRepository } from "../repositories/tag.repository.js";
 
 export const bookService = {
-  // =========================
-  // Crear libro (admin)
-  // =========================
   async create(data) {
     const { author, tags } = data;
 
@@ -36,16 +33,10 @@ export const bookService = {
     return bookRepository.create(data);
   },
 
-  // =========================
-  // Obtener libros públicos
-  // =========================
   async getPublicBooks() {
     return bookRepository.findAll();
   },
 
-  // =========================
-  // Obtener libro por id
-  // =========================
   async getById(id) {
     const book = await bookRepository.findById(id);
     if (!book) {
@@ -54,9 +45,6 @@ export const bookService = {
     return book;
   },
 
-  // =========================
-  // Actualizar libro
-  // =========================
   async update(id, data) {
     const book = await bookRepository.findById(id);
     if (!book) {
@@ -66,9 +54,6 @@ export const bookService = {
     return bookRepository.updateById(id, data);
   },
 
-  // =========================
-  // Soft delete
-  // =========================
   async remove(id) {
     const book = await bookRepository.findById(id);
     if (!book) {

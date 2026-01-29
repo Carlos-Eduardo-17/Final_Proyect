@@ -5,12 +5,12 @@ Calcular totales
 Cambiar estados
 Limpiar carrito
 
-❌ No maneja pagos
-❌ No aplica cupones
-❌ No valida stock
-❌ No verifica roles
-❌ No maneja JWT
-❌ No usa req/res
+ No maneja pagos
+ No aplica cupones
+ No valida stock
+ No verifica roles
+ No maneja JWT
+ No usa req/res
 */
 
 import { cartRepository } from "../repositories/cart.repository.js";

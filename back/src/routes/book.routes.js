@@ -10,10 +10,6 @@ import { roleMiddleware } from "../middlewares/role.middleware.js";
 
 const router = Router();
 
-// =========================
-// Libros
-// =========================
-
 // Crear libro
 router.post("/", roleMiddleware,createBook);
 
@@ -24,7 +20,7 @@ router.get("/", getPublicBooks);
 router.get("/:id", getBookById);
 
 // Actualizar libro
-router.put("/:id", updateBook);
+router.put("/:id", roleMiddleware, updateBook);
 
 // Soft delete
 router.delete("/:id", roleMiddleware, deleteBook);

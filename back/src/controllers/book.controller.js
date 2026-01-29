@@ -1,8 +1,5 @@
 import { bookService } from "../services/book.service.js";
 
-// =========================
-// Crear libro (admin a futuro)
-// =========================
 export async function createBook(req, res, next) {
   try {
     const book = await bookService.create(req.body);
@@ -12,9 +9,6 @@ export async function createBook(req, res, next) {
   }
 }
 
-// =========================
-// Obtener libros públicos
-// =========================
 export async function getPublicBooks(req, res, next) {
   try {
     const books = await bookService.getPublicBooks();
@@ -24,9 +18,6 @@ export async function getPublicBooks(req, res, next) {
   }
 }
 
-// =========================
-// Obtener libro por ID
-// =========================
 export async function getBookById(req, res, next) {
   try {
     const book = await bookService.getById(req.params.id);
@@ -36,9 +27,6 @@ export async function getBookById(req, res, next) {
   }
 }
 
-// =========================
-// Actualizar libro
-// =========================
 export async function updateBook(req, res, next) {
   try {
     const book = await bookService.update(req.params.id, req.body);
@@ -48,9 +36,6 @@ export async function updateBook(req, res, next) {
   }
 }
 
-// =========================
-// Soft delete
-// =========================
 export async function deleteBook(req, res, next) {
   try {
     const book = await bookService.remove(req.params.id);

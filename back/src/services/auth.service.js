@@ -22,9 +22,6 @@ import {
 } from "../utils/mailer.js";
 
 export const authService = {
-  // =========================
-  // REGISTER  
-  // =========================
   async register({ firstName, lastName, email, password }) {
 
     const existingUser = await userRepository.findByEmail(email);

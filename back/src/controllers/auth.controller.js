@@ -3,9 +3,6 @@ import jwt from "jsonwebtoken";
 
 export const authController = {
 
-  // =========================
-  // Registro
-  // =========================
   async register(req, res, next) {
     try {
       const { firstName, lastName, email, password } = req.body;
@@ -26,9 +23,6 @@ export const authController = {
     }
   },
 
-  // =========================
-  // Verificar email
-  // =========================
   async verifyEmail(req, res, next) {
     try {
       const { email, code } = req.body;
@@ -43,9 +37,6 @@ export const authController = {
     }
   },
 
-  // =========================
-  // Login
-  // =========================
   async login(req, res, next) {
     try {
       const { email, password } = req.body;
@@ -79,9 +70,6 @@ export const authController = {
     }
   },
 
-  // =========================
-  // Forgot password
-  // =========================
   async forgotPassword(req, res, next) {
     try {
       const { email } = req.body;
@@ -96,9 +84,6 @@ export const authController = {
     }
   },
 
-  // =========================
-  // Reset password
-  // =========================
   async resetPassword(req, res, next) {
     try {
       const { token, newPassword } = req.body;

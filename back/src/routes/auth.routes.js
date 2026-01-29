@@ -4,10 +4,6 @@ import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-// =========================
-// Auth
-// =========================
-
 router.post("/register", authController.register);
 router.post("/verify-email", authController.verifyEmail);
 router.post("/login", authController.login);

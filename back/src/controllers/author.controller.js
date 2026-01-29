@@ -1,9 +1,5 @@
 import { authorService } from "../services/author.service.js";
 
-// =========================
-// Crear autor
-// POST /authors
-// =========================
 export async function createAuthor(req, res, next) {
   try {
     const author = await authorService.create(req.body);
@@ -13,10 +9,6 @@ export async function createAuthor(req, res, next) {
   }
 }
 
-// =========================
-// Listar autores activos
-// GET /authors
-// =========================
 export async function getAuthors(req, res, next) {
   try {
     const authors = await authorService.findAll();
@@ -26,10 +18,6 @@ export async function getAuthors(req, res, next) {
   }
 }
 
-// =========================
-// Obtener autor por ID
-// GET /authors/:id
-// =========================
 export async function getAuthorById(req, res, next) {
   try {
     const { id } = req.params;
@@ -40,10 +28,6 @@ export async function getAuthorById(req, res, next) {
   }
 }
 
-// =========================
-// Actualizar autor
-// PUT /authors/:id
-// =========================
 export async function updateAuthor(req, res, next) {
   try {
     const { id } = req.params;
@@ -54,10 +38,6 @@ export async function updateAuthor(req, res, next) {
   }
 }
 
-// =========================
-// Soft delete autor
-// DELETE /authors/:id
-// =========================
 export async function deleteAuthor(req, res, next) {
   try {
     const { id } = req.params;

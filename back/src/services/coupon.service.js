@@ -3,17 +3,14 @@ crear cupones
 validar fechas y límites
 aplicar cupón a un pedido (reglas, no pago)
 desactivar / soft delete
-❌ No pagos
-❌ No carrito
-❌ No HTTP
+ No pagos
+ No carrito
+ No HTTP
 */
 
 import { couponRepository } from "../repositories/coupon.repository.js";
 
 export const couponService = {
-  // =========================
-  // Crear cupón
-  // =========================
   async create(data) {
     const {
       code,
@@ -42,9 +39,6 @@ export const couponService = {
     });
   },
 
-  // =========================
-  // Validar cupón
-  // =========================
   async getValidCoupon(code) {
     const coupon = await couponRepository.findByCode(code.toUpperCase());
 
@@ -63,9 +57,6 @@ export const couponService = {
     return coupon;
   },
 
-  // =========================
-  // Aplicar descuento
-  // =========================
   applyDiscount(coupon, subtotal) {
     let discount = 0;
 
@@ -80,9 +71,6 @@ export const couponService = {
     return Math.min(discount, subtotal);
   },
 
-  // =========================
-  // Incrementar uso
-  // =========================
   async incrementUsage(id) {
     return couponRepository.incrementUsage(id);
   },

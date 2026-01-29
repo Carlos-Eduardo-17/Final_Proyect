@@ -53,10 +53,7 @@ export const paymentService = {
     orderDetail.forEach(async (element) => {
       console.log("Stock disponible: ", element.book.stock, " Cantidad: ", element.quantity)
       element.book.stock = element.book.stock - element.quantity;
-    }); // TODO
-
-
-    // Descontar stock de productos de order
+    }); 
 
     return order;
   },

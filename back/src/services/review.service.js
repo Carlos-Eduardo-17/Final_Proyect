@@ -4,9 +4,9 @@ evitar reseñas duplicadas por usuario/libro
 validar rating
 listar reseñas por libro
 ocultar / eliminar reseñas (admin)
-❌ No HTTP
-❌ No permisos (eso luego en middleware)
-❌ No lógica de libros ni pedidos
+ No HTTP
+ No permisos (eso luego en middleware)
+ No lógica de libros ni pedidos
 */
 
 import { reviewRepository } from "../repositories/review.repository.js";
@@ -14,9 +14,6 @@ import { bookRepository } from "../repositories/book.repository.js";
 import { userRepository } from "../repositories/user.repository.js";
 
 export const reviewService = {
-  // =========================
-  // Crear reseña
-  // =========================
   async create({ userId, bookId, rating, comment }) {
     // Validar usuario
     const user = await userRepository.findById(userId);
@@ -53,16 +50,10 @@ export const reviewService = {
     });
   },
 
-  // =========================
-  // Obtener reseñas por libro
-  // =========================
   async findByBook(bookId) {
     return reviewRepository.findByBook(bookId);
   },
 
-  // =========================
-  // Ocultar reseña (admin)
-  // =========================
   async hide(id) {
     const review = await reviewRepository.findById(id);
     if (!review) {

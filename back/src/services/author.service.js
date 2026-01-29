@@ -4,17 +4,14 @@ evitar duplicados
 actualizar datos
 soft delete
 obtener autores activos
-❌ No HTTP
-❌ No permisos
-❌ No lógica de libros
+ No HTTP
+No permisos
+No lógica de libros
 */
 
 import { authorRepository } from "../repositories/author.repository.js";
 
 export const authorService = {
-  // =========================
-  // Crear autor
-  // =========================
   async create(data) {
     const { name } = data;
 
@@ -26,16 +23,10 @@ export const authorService = {
     return authorRepository.create(data);
   },
 
-  // =========================
-  // Obtener autores activos
-  // =========================
   async findAll() {
     return authorRepository.findAll();
   },
 
-  // =========================
-  // Obtener autor por ID
-  // =========================
   async findById(id) {
     const author = await authorRepository.findById(id);
     if (!author) {
@@ -44,9 +35,6 @@ export const authorService = {
     return author;
   },
 
-  // =========================
-  // Actualizar autor
-  // =========================
   async update(id, data) {
     const author = await authorRepository.findById(id);
     if (!author) {
@@ -56,9 +44,6 @@ export const authorService = {
     return authorRepository.updateById(id, data);
   },
 
-  // =========================
-  // Soft delete
-  // =========================
   async remove(id) {
     const author = await authorRepository.findById(id);
     if (!author) {

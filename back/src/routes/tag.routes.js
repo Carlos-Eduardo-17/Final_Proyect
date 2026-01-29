@@ -10,10 +10,6 @@ import { roleMiddleware } from "../middlewares/role.middleware.js";
 
 const router = Router();
 
-// =========================
-// Tags
-// =========================
-
 // Crear tag
 router.post("/", roleMiddleware, createTag);
 

@@ -1,9 +1,5 @@
 import { tagService } from "../services/tag.service.js";
 
-// =========================
-// Crear tag
-// POST /tags
-// =========================
 export async function createTag(req, res, next) {
   try {
     const { name } = req.body;
@@ -14,10 +10,6 @@ export async function createTag(req, res, next) {
   }
 }
 
-// =========================
-// Listar tags activos
-// GET /tags
-// =========================
 export async function getTags(req, res, next) {
   try {
     const tags = await tagService.findAll();
@@ -27,10 +19,6 @@ export async function getTags(req, res, next) {
   }
 }
 
-// =========================
-// Obtener tag por ID
-// GET /tags/:id
-// =========================
 export async function getTagById(req, res, next) {
   try {
     const { id } = req.params;
@@ -41,10 +29,6 @@ export async function getTagById(req, res, next) {
   }
 }
 
-// =========================
-// Actualizar tag
-// PUT /tags/:id
-// =========================
 export async function updateTag(req, res, next) {
   try {
     const { id } = req.params;
@@ -56,10 +40,6 @@ export async function updateTag(req, res, next) {
   }
 }
 
-// =========================
-// Soft delete tag
-// DELETE /tags/:id
-// =========================
 export async function deleteTag(req, res, next) {
   try {
     const { id } = req.params;

@@ -12,13 +12,14 @@ const transporter = nodemailer.createTransport({
 
 // Verificación de correo
 export async function sendVerificationEmail(email, code) {
-console.log("email",email,"code",code);
+
     if (!email) {
         throw new Error("Email destinatario no definido");
     }
-
+    console.log("email",email,"code",code);
     console.log("process.env.SMTP_HOST",process.env.SMTP_HOST,"Number(process.env.SMTP_PORT)",Number(process.env.SMTP_PORT));
-    console.log("process.env.SMTP_USER",process.env.SMTP_USER,"process.env.SMTP_PASS",Number(process.env.SMTP_PASS));
+    console.log("process.env.SMTP_USER",process.env.SMTP_USER,"process.env.SMTP_PASS",(process.env.SMTP_PASS));
+    console.log("code", code);
     await transporter.sendMail({
         from: `"Librería" <${process.env.SMTP_USER}>`,
         to: email,
